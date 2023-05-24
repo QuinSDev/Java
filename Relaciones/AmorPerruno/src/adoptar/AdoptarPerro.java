@@ -37,7 +37,7 @@ public class AdoptarPerro {
         perro.setPerro(new Perro("Groot", "Chichuacha", 2, 15));
         perro.setPerro(new Perro("Colitas", "Shih Tzu", 5, 17));
         perro.setPerro(new Perro("Bowser", "Boxer", 8, 35));
-        perro.setPerro(new Perro("Bowser", "Beagle", 12, 36));
+        perro.setPerro(new Perro("Estrella", "Beagle", 12, 36));
         perro.setPerro(new Perro("Viruela", "Labrador", 8, 35));
         perro.setPerro(new Perro("Pancho", "Pastor Alemán", 5, 20));
         perro.setPerro(new Perro("Dexter", "Doberman", 8, 40));
