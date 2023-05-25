@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Scanner;
 
-public class Lavadora extends Electrodomestico{
+public final class Lavadora extends Electrodomestico{
     
     private int carga;
 
@@ -27,16 +27,16 @@ public class Lavadora extends Electrodomestico{
         this.carga = carga;
     }
     
-    public void crearLavadora() {
+    public void crearLavadora(Scanner read) {
         
-        Scanner read = new Scanner(System.in);
         
         System.out.println("Lavadora\n");
         
-        crearElectrodomestico();
+        crearElectrodomestico(read);
         
-        System.out.print("Ingrese la carga máxima:");
+        System.out.print("Ingrese la carga máxima: ");
         this.carga = read.nextInt();
+        read.nextLine();
         
         precioFinal();
         
@@ -56,10 +56,10 @@ public class Lavadora extends Electrodomestico{
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Electrodomestico \nPrecio:").append(precio);
-        sb.append("\nColor:").append(color);
+        sb.append("\nLavadora \nPrecio: $").append(precio);
+        sb.append("\nColor: ").append(color);
         sb.append("\nConsumo Energético: ").append(consumoEnergetico);
-        sb.append("\nPeso:").append(peso);
+        sb.append("\nPeso: ").append(peso).append(" kg");
         sb.append("\nCarga: ").append(carga);
         return  sb.toString();
     }

@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Scanner;
 
-public class Electrodomestico {
+public class Electrodomestico implements Caracteristica{
     
     protected double precio;
     protected String color;
@@ -51,8 +51,9 @@ public class Electrodomestico {
     public void setPeso(double peso) {
         this.peso = peso;
     }
-    
-    protected void comprobarConsumoEnergetico(char letra) {
+
+    @Override
+    public void comprobarConsumoEnegertico(char letra) {
         
         char[] letras = {'A','B','C','D','E','F'};
         boolean encontrado = false;
@@ -72,9 +73,9 @@ public class Electrodomestico {
         }
         
     }
-    
-    protected void comprobarColor(String color) {
-        
+
+    @Override
+    public void comprobarColor(String color) {
         String[] colores = {"Blanco", "Negro", "Rojo", "Azul", "Gris"};
         boolean encontrado = false ;
         
@@ -89,27 +90,24 @@ public class Electrodomestico {
         } else {
             this.color = "Blanco";
         }
-        
     }
     
-    public void crearElectrodomestico() {
-        
-        Scanner read = new Scanner(System.in);
+    public void crearElectrodomestico(Scanner read) {
         
         System.out.print("Ingrese el color deseado: ");
         this.color = read.nextLine();
         comprobarColor(color);
         System.out.print("Ingrese el consumo energético: ");
         this.consumoEnergetico = read.nextLine().toUpperCase().charAt(0);
-        comprobarConsumoEnergetico(consumoEnergetico);
+        comprobarConsumoEnegertico(consumoEnergetico);
         System.out.print("Ingrese el peso: ");
         this.peso = read.nextDouble();
         this.precio = 1000;
         
     }
-    
+
+    @Override
     public void precioFinal() {
-        
         switch(consumoEnergetico) {
             case 'A':
                 this.precio += 1000;
@@ -156,7 +154,4 @@ public class Electrodomestico {
         sb.append("\nPeso:").append(peso);
         return sb.toString();
     }
-    
-    
-    
 }

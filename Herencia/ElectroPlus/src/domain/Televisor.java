@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Scanner;
 
-public class Televisor extends Electrodomestico{
+public final class Televisor extends Electrodomestico{
     
     private double resolucion;
     private boolean sintonizadorTDT;
@@ -39,16 +39,16 @@ public class Televisor extends Electrodomestico{
     }
     
     
-    public void crearTelevisor() {
+    public void crearTelevisor(Scanner read) {
         
-        Scanner read = new Scanner(System.in);
         
-        System.out.println("Televisor\n");
+        System.out.println("\nTelevisor\n");
         
-        crearElectrodomestico();
+        crearElectrodomestico(read);
         
         System.out.print("Ingrese la resolución: ");
         this.resolucion = read.nextDouble();
+        read.nextLine();
         
         if (this.resolucion >= 40) {
             this.sintonizadorTDT = true;
@@ -65,7 +65,7 @@ public class Televisor extends Electrodomestico{
         super.precioFinal();
         
         if (this.resolucion > 40) {
-            this.precio = (this.precio * 0.30);
+            this.precio *= 1.3;
         }
         
         if (this.sintonizadorTDT) {
@@ -76,7 +76,7 @@ public class Televisor extends Electrodomestico{
     @Override
     public String toString() {
          StringBuilder sb = new StringBuilder();
-        sb.append("Lavadora \nPrecio: ").append(precio);
+        sb.append("\nTelevisor \nPrecio: $").append(precio);
         sb.append("\nColor: ").append(color);
         sb.append("\nConsumo Energético: ").append(consumoEnergetico);
         sb.append("\nPeso: ").append(peso);
