@@ -148,7 +148,7 @@ public class Electrodomestico implements Caracteristica{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Electrodomestico \nPrecio:").append(precio);
+        sb.append("\nPrecio:").append(precio);
         sb.append("\nColor:").append(color);
         sb.append("\nConsumo Energético: ").append(consumoEnergetico);
         sb.append("\nPeso:").append(peso);
