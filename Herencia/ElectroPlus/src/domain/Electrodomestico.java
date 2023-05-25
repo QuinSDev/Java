@@ -1,0 +1,162 @@
+package domain;
+
+import java.util.Scanner;
+
+public class Electrodomestico {
+    
+    protected double precio;
+    protected String color;
+    protected char consumoEnergetico;
+    protected double peso;
+
+    public Electrodomestico() {
+    }
+
+    public Electrodomestico(double precio, String color, char consumoEnergetico, 
+            double peso) {
+        this.precio = precio;
+        this.color = color;
+        this.consumoEnergetico = consumoEnergetico;
+        this.peso = peso;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public char getConsumoEnergetico() {
+        return consumoEnergetico;
+    }
+
+    public void setConsumoEnergetico(char consumoEnergetico) {
+        this.consumoEnergetico = consumoEnergetico;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+    
+    protected void comprobarConsumoEnergetico(char letra) {
+        
+        char[] letras = {'A','B','C','D','E','F'};
+        boolean encontrado = false;
+        
+        for (char m : letras) {
+             String letter = String.valueOf(letra);
+            String letter1 = String.valueOf(m);
+            if (letter.equalsIgnoreCase(letter1)) {
+                encontrado = true;
+            }
+        }
+        
+        if (encontrado) {
+            this.consumoEnergetico = letra;
+        } else {
+            this.consumoEnergetico = 'F';
+        }
+        
+    }
+    
+    protected void comprobarColor(String color) {
+        
+        String[] colores = {"Blanco", "Negro", "Rojo", "Azul", "Gris"};
+        boolean encontrado = false ;
+        
+        for (String colore : colores) {
+            if (colore.equalsIgnoreCase(color)) {
+                encontrado = true;
+            }
+        }
+        
+        if (encontrado) {
+            this.color = color;
+        } else {
+            this.color = "Blanco";
+        }
+        
+    }
+    
+    public void crearElectrodomestico() {
+        
+        Scanner read = new Scanner(System.in);
+        
+        System.out.print("Ingrese el color deseado: ");
+        this.color = read.nextLine();
+        comprobarColor(color);
+        System.out.print("Ingrese el consumo energético: ");
+        this.consumoEnergetico = read.nextLine().toUpperCase().charAt(0);
+        comprobarConsumoEnergetico(consumoEnergetico);
+        System.out.print("Ingrese el peso: ");
+        this.peso = read.nextDouble();
+        this.precio = 1000;
+        
+    }
+    
+    public void precioFinal() {
+        
+        switch(consumoEnergetico) {
+            case 'A':
+                this.precio += 1000;
+                break;
+            case 'B':
+                this.precio += 800;
+            case 'C':
+                this.precio += 600;
+                break;
+            case 'D':
+                this.precio += 500;
+                break;
+            case 'E':
+                this.precio += 300;
+                break;
+            case 'F':
+                this.precio += 100;
+                break;
+        }
+        
+        if (this.peso >= 1 && this.peso <= 19) {
+            this.precio += 100;
+        }
+        
+        if (this.peso >= 20 && this.peso <= 49) {
+            this.precio += 500;
+        }
+        
+        if (this.peso >= 50 && this.peso <= 79) {
+            this.precio += 800;
+        }
+        
+        if (this.peso >= 80) {
+            this.precio += 1000;
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Electrodomestico \nPrecio:").append(precio);
+        sb.append("\nColor:").append(color);
+        sb.append("\nConsumo Energético: ").append(consumoEnergetico);
+        sb.append("\nPeso:").append(peso);
+        return sb.toString();
+    }
+    
+    
+    
+}
