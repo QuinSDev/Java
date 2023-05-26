@@ -106,8 +106,7 @@ public class Electrodomestico implements Caracteristica{
         
     }
 
-    @Override
-    public void precioFinal() {
+    protected void precioFinal() {
         switch(consumoEnergetico) {
             case 'A':
                 this.precio += 1000;

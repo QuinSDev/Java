@@ -6,6 +6,7 @@ public final class Televisor extends Electrodomestico{
     
     private double resolucion;
     private boolean sintonizadorTDT;
+    private String nombre = "Televisor";
 
     public Televisor() {
     }
@@ -37,6 +38,14 @@ public final class Televisor extends Electrodomestico{
     public void setSintonizadorTDT(boolean sintonizadorTDT) {
         this.sintonizadorTDT = sintonizadorTDT;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
     
     public void crearTelevisor(Scanner read) {
@@ -48,20 +57,22 @@ public final class Televisor extends Electrodomestico{
         
         System.out.print("Ingrese la resolución: ");
         this.resolucion = read.nextDouble();
+        System.out.print("¿Lleva TDT?(true/false): ");
+        this.sintonizadorTDT = read.nextBoolean();
         read.nextLine();
         
-        if (this.resolucion >= 40) {
-            this.sintonizadorTDT = true;
-        } else {
-            this.sintonizadorTDT = false;
-        }
-        
+//        if (this.resolucion >= 40) {
+//            this.sintonizadorTDT = true;
+//        } else {
+//            this.sintonizadorTDT = false;
+//        }
+//        
         precioFinal();
         
     }
 
     @Override
-    public void precioFinal() {
+    protected void precioFinal() {
         super.precioFinal();
         
         if (this.resolucion > 40) {
