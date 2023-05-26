@@ -1,29 +1,19 @@
 package test;
 
-import domain.*;
-import service.DomesticManager;
+import service.*;
 
 public class ElectrodomesticoTest {
     
     public static void main(String[] args) {
         
-//        Lavadora lavadora = new Lavadora();
-//        lavadora.crearLavadora();
-//        imprimir(lavadora);
-//        Televisor televisor = new Televisor();
-//        televisor.crearTelevisor();
-//        imprimir(televisor);
+        DomesticMenu menu = new DomesticMenu();
+        menu.menu();
 
-            DomesticManager domes = new DomesticManager();
-            domes.electroCreate();
+//            DomesticManager domes = new DomesticManager();
+//            domes.electroCreate();
         
         
     }
     
-//    public static void imprimir(Electrodomestico electrodomestico){
-//        
-//        System.out.println(electrodomestico);
-//        
-//    }
-    
+
 }

@@ -5,6 +5,7 @@ import java.util.Scanner;
 public final class Lavadora extends Electrodomestico{
     
     private int carga;
+    private String nombre = "Lavadora";
 
     public Lavadora() {
     }
@@ -26,11 +27,20 @@ public final class Lavadora extends Electrodomestico{
     public void setCarga(int carga) {
         this.carga = carga;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
     public void crearLavadora(Scanner read) {
         
         
-        System.out.println("Lavadora\n");
+        System.out.println("\nLavadora\n");
         
         crearElectrodomestico(read);
         
@@ -43,7 +53,7 @@ public final class Lavadora extends Electrodomestico{
     }
 
     @Override
-    public void precioFinal() {
+    protected void precioFinal() {
         
         super.precioFinal();
         

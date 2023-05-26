@@ -106,8 +106,7 @@ public class Electrodomestico implements Caracteristica{
         
     }
 
-    @Override
-    public void precioFinal() {
+    protected void precioFinal() {
         switch(consumoEnergetico) {
             case 'A':
                 this.precio += 1000;
@@ -148,7 +147,7 @@ public class Electrodomestico implements Caracteristica{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\nPrecio:").append(precio);
+        sb.append("Electrodoméstico \nPrecio:").append(precio);
         sb.append("\nColor:").append(color);
         sb.append("\nConsumo Energético: ").append(consumoEnergetico);
         sb.append("\nPeso:").append(peso);

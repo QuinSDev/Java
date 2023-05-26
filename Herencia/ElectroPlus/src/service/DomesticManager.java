@@ -12,27 +12,17 @@ public class DomesticManager {
 
     Scanner read = new Scanner(System.in);
 
-    public void electroCreate() {
+    public void electroCreate(String product) {
             
-        lavadora.crearLavadora(read);
-        televisor.crearTelevisor(read);
         
-        electros.add(lavadora);
-        electros.add(televisor);
+        if (lavadora.getNombre().equalsIgnoreCase(product)) {
+            lavadora.crearLavadora(read);
+            electros.add(lavadora);
+        }
         
-        for (Electrodomestico electro : electros) {
-            if (electro instanceof Lavadora) {
-                Lavadora lavadora = (Lavadora) electro;
-                imprimir(lavadora);
-                continue;
-            }
-            
-            if (electro instanceof Televisor) {
-                Televisor televisor = (Televisor) electro;
-                imprimir(televisor);
-                continue;
-            }
-            
+        if (televisor.getNombre().equalsIgnoreCase(product)) {
+            televisor.crearTelevisor(read);
+            electros.add(televisor);
         }
 
     }
