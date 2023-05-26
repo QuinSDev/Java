@@ -4,17 +4,19 @@ import java.util.Scanner;
 
 public class Electrodomestico implements Caracteristica{
     
-    protected double precio;
+    protected double precio, precioTotal;
     protected String color;
     protected char consumoEnergetico;
     protected double peso;
 
     public Electrodomestico() {
+        this.precioTotal = 0;
     }
 
-    public Electrodomestico(double precio, String color, char consumoEnergetico, 
-            double peso) {
+    public Electrodomestico(double precio, double precioTotal, String color, 
+            char consumoEnergetico, double peso) {
         this.precio = precio;
+        this.precioTotal = precioTotal;
         this.color = color;
         this.consumoEnergetico = consumoEnergetico;
         this.peso = peso;
@@ -51,6 +53,16 @@ public class Electrodomestico implements Caracteristica{
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+    public double getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal = precioTotal;
+    }
+    
+    
 
     @Override
     public void comprobarConsumoEnegertico(char letra) {
@@ -100,13 +112,11 @@ public class Electrodomestico implements Caracteristica{
         System.out.print("Ingrese el consumo energético: ");
         this.consumoEnergetico = read.nextLine().toUpperCase().charAt(0);
         comprobarConsumoEnegertico(consumoEnergetico);
-        System.out.print("Ingrese el peso: ");
-        this.peso = read.nextDouble();
         this.precio = 1000;
         
     }
 
-    protected void precioFinal() {
+    protected double precioFinal() {
         switch(consumoEnergetico) {
             case 'A':
                 this.precio += 1000;
@@ -142,15 +152,19 @@ public class Electrodomestico implements Caracteristica{
         if (this.peso >= 80) {
             this.precio += 1000;
         }
+        
+        return this.precio;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\nPrecio:").append(precio);
-        sb.append("\nColor:").append(color);
-        sb.append("\nConsumo Energético: ").append(consumoEnergetico);
-        sb.append("\nPeso:").append(peso);
+        
+       sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | "
+               + "%-12s | %-6s | %-8.2f |", "",
+                color, consumoEnergetico, "", "", "", precio));
+        sb.append("\n+----------------------+------------+--------------"
+                + "+----------+--------------+--------+----------+");
         return sb.toString();
     }
 }

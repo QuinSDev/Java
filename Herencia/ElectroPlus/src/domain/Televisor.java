@@ -2,13 +2,14 @@ package domain;
 
 import java.util.Scanner;
 
-public final class Televisor extends Electrodomestico{
-    
+public final class Televisor extends Electrodomestico {
+
     private double resolucion;
     private boolean sintonizadorTDT;
-    private String nombre = "Televisor";
+    private String nombre = "Televisor", valBol = "";
 
     public Televisor() {
+        this.precioTotal = 0;
     }
 
     public Televisor(double resolucion, boolean sintonizadorTDT) {
@@ -16,9 +17,10 @@ public final class Televisor extends Electrodomestico{
         this.sintonizadorTDT = sintonizadorTDT;
     }
 
-    public Televisor(double resolucion, boolean sintonizadorTDT, double precio, 
-            String color, char consumoEnergetico, double peso) {
-        super(precio, color, consumoEnergetico, peso);
+    public Televisor(double resolucion, boolean sintonizadorTDT, double precio,
+            double precioTotal, String color, char consumoEnergetico, 
+            double peso) {
+        super(precio, precioTotal, color, consumoEnergetico, peso);
         this.resolucion = resolucion;
         this.sintonizadorTDT = sintonizadorTDT;
     }
@@ -46,57 +48,55 @@ public final class Televisor extends Electrodomestico{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+
     public void crearTelevisor(Scanner read) {
-        
-        
-//        System.out.println("\nTelevisor\n");
-        
+
         crearElectrodomestico(read);
-        
+
         System.out.print("Ingrese la resolución: ");
         this.resolucion = read.nextDouble();
-        System.out.print("¿Lleva TDT?(true/false): ");
-        this.sintonizadorTDT = read.nextBoolean();
         read.nextLine();
-        
-//        if (this.resolucion >= 40) {
-//            this.sintonizadorTDT = true;
-//        } else {
-//            this.sintonizadorTDT = false;
-//        }
-//        
+        System.out.print("¿Lleva TDT?(si/no): ");
+        valBol = read.nextLine();
+
+        if (valBol.equalsIgnoreCase("si")) {
+            this.sintonizadorTDT = true;
+        } else {
+            this.sintonizadorTDT = false;
+        }
+
         precioFinal();
         
+
     }
 
     @Override
-    protected void precioFinal() {
+    protected double precioFinal() {
         super.precioFinal();
-        
+
         if (this.resolucion > 40) {
             this.precio *= 1.3;
         }
-        
+
         if (this.sintonizadorTDT) {
             this.precio += 500;
         }
+        setPrecioTotal(getPrecioTotal() + this.precio);
+
+        return this.precio;
     }
 
     @Override
     public String toString() {
-         StringBuilder sb = new StringBuilder();
-        sb.append("\nTelevisor \nPrecio: $").append(precio);
-        sb.append("\nColor: ").append(color);
-        sb.append("\nConsumo Energético: ").append(consumoEnergetico);
-        sb.append("\nPeso: ").append(peso);
-        sb.append("\nResolución: ").append(resolucion);
-        sb.append("\nSintonización TDT: ").append(sintonizadorTDT);
-        sb.append("\n");
-        return  sb.toString();
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | "
+                + "%-12.0f | %-6s | %-8.2f |", nombre,
+                color, consumoEnergetico, "", resolucion, valBol,
+                precio));
+        sb.append("\n+----------------------+------------+--------------"
+                + "+----------+--------------+--------+----------+");
+        return sb.toString();
     }
-    
-    
-    
+
 }
