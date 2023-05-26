@@ -40,7 +40,7 @@ public final class Lavadora extends Electrodomestico{
     public void crearLavadora(Scanner read) {
         
         
-        System.out.println("\nLavadora\n");
+//        System.out.println("\nLavadora\n");
         
         crearElectrodomestico(read);
         
@@ -71,6 +71,7 @@ public final class Lavadora extends Electrodomestico{
         sb.append("\nConsumo Energético: ").append(consumoEnergetico);
         sb.append("\nPeso: ").append(peso).append(" kg");
         sb.append("\nCarga: ").append(carga);
+        sb.append("\n");
         return  sb.toString();
     }
  

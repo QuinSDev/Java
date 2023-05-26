@@ -27,9 +27,12 @@ public class DomesticManager {
 
     }
     
-    public void imprimir(Electrodomestico electro) {
+    public void imprimir() {
         
-        System.out.println(electro);
+        for (Electrodomestico electro : electros) {
+            System.out.println(electro);
+        }
+        
     }
 
 }

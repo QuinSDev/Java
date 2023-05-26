@@ -62,6 +62,7 @@ public class DomesticMenu {
                 menuRegister();
                 break;
             case 2:
+                domestic.imprimir();
                 break;
             case 3:
                 break;

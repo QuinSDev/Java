@@ -94,7 +94,7 @@ public class Electrodomestico implements Caracteristica{
     
     public void crearElectrodomestico(Scanner read) {
         
-        System.out.print("Ingrese el color deseado: ");
+        System.out.print("\nIngrese el color deseado: ");
         this.color = read.nextLine();
         comprobarColor(color);
         System.out.print("Ingrese el consumo energético: ");

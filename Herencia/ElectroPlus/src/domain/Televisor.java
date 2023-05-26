@@ -51,7 +51,7 @@ public final class Televisor extends Electrodomestico{
     public void crearTelevisor(Scanner read) {
         
         
-        System.out.println("\nTelevisor\n");
+//        System.out.println("\nTelevisor\n");
         
         crearElectrodomestico(read);
         
@@ -93,6 +93,7 @@ public final class Televisor extends Electrodomestico{
         sb.append("\nPeso: ").append(peso);
         sb.append("\nResolución: ").append(resolucion);
         sb.append("\nSintonización TDT: ").append(sintonizadorTDT);
+        sb.append("\n");
         return  sb.toString();
     }
     
