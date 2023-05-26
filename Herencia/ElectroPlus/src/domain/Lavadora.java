@@ -39,9 +39,6 @@ public final class Lavadora extends Electrodomestico{
     
     public void crearLavadora(Scanner read) {
         
-        
-//        System.out.println("\nLavadora\n");
-        
         crearElectrodomestico(read);
         
         System.out.print("Ingrese la carga máxima: ");
