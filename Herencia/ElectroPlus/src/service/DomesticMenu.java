@@ -92,14 +92,20 @@ public class DomesticMenu {
             System.out.print("¿Que producto deseas registrar?: ");
             String produc = read.nextLine();
             domestic.electroCreate(produc);
-            System.out.print("\n¿Deseas registrar un nuevo producto?(Y/N): ");
-            deci = read.nextLine();
-            System.out.println("");
+            
+            do {
+                System.out.print("\n¿Deseas registrar un nuevo producto?(Y/N): ");
+                deci = read.nextLine();
+                System.out.println("");
              
-            if (deci.equalsIgnoreCase("N")) {
-                menu();
-                break;
-            }
+                if (deci.equalsIgnoreCase("N")) {
+                    menu();
+                    break;
+                }
+                
+            } while (!deci.equalsIgnoreCase("Y") && !deci.equalsIgnoreCase("N"));
+            
+            
             
         } while (deci.equalsIgnoreCase("Y"));
         

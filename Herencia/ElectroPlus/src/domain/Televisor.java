@@ -52,11 +52,11 @@ public final class Televisor extends Electrodomestico {
 
         crearElectrodomestico(read);
 
-        System.out.print("Ingrese la resolución: ");
+        System.out.print("Ingrese la resolución(pulgadas): ");
         this.resolucion = read.nextDouble();
         read.nextLine();
         System.out.print("¿Lleva TDT?(si/no): ");
-        valBol = read.nextLine();
+        valBol = read.nextLine().toUpperCase();
 
         if (valBol.equalsIgnoreCase("si")) {
             this.sintonizadorTDT = true;
@@ -87,15 +87,19 @@ public final class Televisor extends Electrodomestico {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         
+        String pesoFormatt = String.format("%-3.1f", peso);
+        String pesoFor = pesoFormatt.concat(" kg");
         String precioFormatt = String.format("%-1.2f", precio);
         String precioFOr = "$".concat(precioFormatt);
+        String resolFormatt = String.format("%-1.0f", resolucion);
+        String resolFor = resolFormatt + '"';
 
-        sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | "
-                + "%-12.0f | %-6s | %-8s |", nombre,
-                color, consumoEnergetico, "", resolucion, valBol,
+        sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | %-11s | "
+                + "%-12s | %-6s | %-8s |", nombre,
+                color, consumoEnergetico, pesoFor, "", resolFor, valBol,
                 precioFOr));
         sb.append("\n+----------------------+------------+--------------"
-                + "+----------+--------------+--------+----------+");
+                + "+----------+-------------+--------------+--------+----------+");
         return sb.toString();
     }
 

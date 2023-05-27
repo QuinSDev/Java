@@ -101,6 +101,8 @@ public class Electrodomestico implements Caracteristica{
         System.out.print("Ingrese el consumo energético: ");
         this.consumoEnergetico = read.nextLine().toUpperCase().charAt(0);
         comprobarConsumoEnegertico(consumoEnergetico);
+        System.out.print("Ingrese el peso: ");
+        this.peso = read.nextDouble();
         this.precio = 1000;
         
     }

@@ -40,8 +40,6 @@ public final class Lavadora extends Electrodomestico {
 
         crearElectrodomestico(read);
 
-        System.out.print("Ingrese el peso: ");
-        this.peso = read.nextDouble();
         System.out.print("Ingrese la carga máxima: ");
         this.carga = read.nextInt();
 
@@ -69,16 +67,17 @@ public final class Lavadora extends Electrodomestico {
         StringBuilder sb = new StringBuilder();
         
         String pesoFormatt = String.format("%-3.0f", peso);
-        String pesoFor = pesoFormatt.concat(" kg");
+        String pesoFor = pesoFormatt.concat("kg");
         String precioFormatt = String.format("%-1.2f", precio);
         String precioFOr = "$".concat(precioFormatt);
+        String cargaFormatt = String.format("%-3d", carga);
+        String cargaFor = cargaFormatt.concat("kg");
         
-
-        sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | "
+        sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | %-11s | "
                 + "%-12s | %-6s | %-8s |", nombre,
-                color, consumoEnergetico, pesoFor, "", "", precioFOr));
+                color, consumoEnergetico, pesoFor, cargaFor, "", "", precioFOr));
         sb.append("\n+----------------------+------------+--------------"
-                + "+----------+--------------+--------+----------+");
+                + "+----------+-------------+--------------+--------+----------+");
         return sb.toString();
     }
 
