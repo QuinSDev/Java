@@ -31,6 +31,7 @@ public class DomesticManager {
     public void imprimir() {
         
         int ancho = 98;
+        double precioTo = 0;
         
         int[] longi = {22, 10, 12, 8, 12, 6, 8};
         String[] tabla = {"| Producto", "Color", "Consumo E.", "Peso",
@@ -46,7 +47,12 @@ public class DomesticManager {
         for (int i = 0; i < tabla.length; i++) {
             
             for (int j = 0; j < longi[i]; j++) {
-                System.out.print("-");
+                if (j == 0 && i == 0) {
+                    System.out.print("+");
+                } else {
+                    System.out.print("-");
+                }
+                
             }
             if (i != tabla.length - 1) {
                 System.out.print("-+-");
@@ -57,11 +63,15 @@ public class DomesticManager {
         
         for (Electrodomestico electro : electros) {
             System.out.println(electro);
+            precioTo += electro.getPrecio();
         }
         
-        System.out.format("| %-20s %-10s %-12s %-8s "
-                + "%-12s %-6s %-8.2f |", "", "", "", "", "", "", 
-                elec.getPrecioTotal());
+        String messagePrecio = "PRECIO TOTAL";
+        
+        int paddginP = (84 - messagePrecio.length()) / 2;
+        
+        System.out.format("|%" + paddginP + "s%s%" + paddginP +"s | %-8.2f |","",
+                messagePrecio, "", precioTo);
         System.out.println("\n"+"-".repeat(ancho));
         
         System.out.println("");

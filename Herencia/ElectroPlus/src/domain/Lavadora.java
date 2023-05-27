@@ -12,12 +12,11 @@ public final class Lavadora extends Electrodomestico {
 
     public Lavadora(int carga) {
         this.carga = carga;
-        this.precioTotal = 0;
     }
 
     public Lavadora(int carga, double precio, double precioTotal, String color,
             char consumoEnergetico, double peso) {
-        super(precio, precioTotal, color, consumoEnergetico, peso);
+        super(precio, color, consumoEnergetico, peso);
         this.carga = carga;
     }
 
@@ -61,17 +60,23 @@ public final class Lavadora extends Electrodomestico {
         if (carga > 30) {
             this.precio += 500;
         }
-        this.precioTotal += precio;
+        
         return this.precio;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        
+        String pesoFormatt = String.format("%-3.0f", peso);
+        String pesoFor = pesoFormatt.concat(" kg");
+        String precioFormatt = String.format("%-1.2f", precio);
+        String precioFOr = "$".concat(precioFormatt);
+        
 
-        sb.append(String.format("| %-20s | %-10s | %-12c | %-8.0f | "
-                + "%-12s | %-6s | %-8.2f |", nombre,
-                color, consumoEnergetico, peso, "", "", precio));
+        sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | "
+                + "%-12s | %-6s | %-8s |", nombre,
+                color, consumoEnergetico, pesoFor, "", "", precioFOr));
         sb.append("\n+----------------------+------------+--------------"
                 + "+----------+--------------+--------+----------+");
         return sb.toString();

@@ -4,19 +4,18 @@ import java.util.Scanner;
 
 public class Electrodomestico implements Caracteristica{
     
-    protected double precio, precioTotal;
+    protected double precio;
     protected String color;
     protected char consumoEnergetico;
     protected double peso;
 
     public Electrodomestico() {
-        this.precioTotal = 0;
+        
     }
 
-    public Electrodomestico(double precio, double precioTotal, String color, 
+    public Electrodomestico(double precio, String color, 
             char consumoEnergetico, double peso) {
         this.precio = precio;
-        this.precioTotal = precioTotal;
         this.color = color;
         this.consumoEnergetico = consumoEnergetico;
         this.peso = peso;
@@ -53,16 +52,6 @@ public class Electrodomestico implements Caracteristica{
     public void setPeso(double peso) {
         this.peso = peso;
     }
-
-    public double getPrecioTotal() {
-        return precioTotal;
-    }
-
-    public void setPrecioTotal(double precioTotal) {
-        this.precioTotal = precioTotal;
-    }
-    
-    
 
     @Override
     public void comprobarConsumoEnegertico(char letra) {

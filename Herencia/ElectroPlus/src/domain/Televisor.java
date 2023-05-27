@@ -9,7 +9,7 @@ public final class Televisor extends Electrodomestico {
     private String nombre = "Televisor", valBol = "";
 
     public Televisor() {
-        this.precioTotal = 0;
+        
     }
 
     public Televisor(double resolucion, boolean sintonizadorTDT) {
@@ -18,9 +18,8 @@ public final class Televisor extends Electrodomestico {
     }
 
     public Televisor(double resolucion, boolean sintonizadorTDT, double precio,
-            double precioTotal, String color, char consumoEnergetico, 
-            double peso) {
-        super(precio, precioTotal, color, consumoEnergetico, peso);
+            String color, char consumoEnergetico, double peso) {
+        super(precio, color, consumoEnergetico, peso);
         this.resolucion = resolucion;
         this.sintonizadorTDT = sintonizadorTDT;
     }
@@ -66,7 +65,6 @@ public final class Televisor extends Electrodomestico {
         }
 
         precioFinal();
-        
 
     }
 
@@ -81,7 +79,6 @@ public final class Televisor extends Electrodomestico {
         if (this.sintonizadorTDT) {
             this.precio += 500;
         }
-        setPrecioTotal(getPrecioTotal() + this.precio);
 
         return this.precio;
     }
@@ -89,11 +86,14 @@ public final class Televisor extends Electrodomestico {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        
+        String precioFormatt = String.format("%-1.2f", precio);
+        String precioFOr = "$".concat(precioFormatt);
 
         sb.append(String.format("| %-20s | %-10s | %-12c | %-8s | "
-                + "%-12.0f | %-6s | %-8.2f |", nombre,
+                + "%-12.0f | %-6s | %-8s |", nombre,
                 color, consumoEnergetico, "", resolucion, valBol,
-                precio));
+                precioFOr));
         sb.append("\n+----------------------+------------+--------------"
                 + "+----------+--------------+--------+----------+");
         return sb.toString();
