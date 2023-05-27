@@ -6,6 +6,6 @@ public interface CalculosFormas {
     
     public int calcularArea();
     
-    public double calcularPerimetro();
+    public int calcularPerimetro();
     
 }

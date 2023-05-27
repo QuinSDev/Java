@@ -20,8 +20,8 @@ public class Circulo implements CalculosFormas{
     }
 
     @Override
-    public double calcularPerimetro() {
-        return PI * diametro;
+    public int calcularPerimetro() {
+        return (int) (PI * diametro);
     }
     
 }
