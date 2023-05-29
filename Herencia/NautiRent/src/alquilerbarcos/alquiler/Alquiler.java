@@ -1,8 +1,9 @@
-package alquilerbarcos;
+package alquilerbarcos.alquiler;
 
 import alquilerbarcos.model.Barco;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
 public class Alquiler {
     
@@ -10,9 +11,11 @@ public class Alquiler {
     private long documento;
     private LocalDate fechaAlquiler, fechaDevolucion;
     private String posicionAmarre;
+    private ArrayList<Barco> barcos;
     private Barco barco;
 
     public Alquiler() {
+        barcos = new ArrayList<>();
     }
 
     public Alquiler(String nombre, long documento, LocalDate fechaAlquiler, 
@@ -71,6 +74,13 @@ public class Alquiler {
 
     public void setBarco(Barco barco) {
         this.barco = barco;
+    }
+    
+    public void barcos() {
+        
+        barcos.add(new Barco("Marina Azul", 25, LocalDate.parse("2010-05-23")));
+        barcos.add(new Barco("Viento Sereno", 30, LocalDate.parse("2015-01-18")));
+        
     }
     
     public void alquilar() {
