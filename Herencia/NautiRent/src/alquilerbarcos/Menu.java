@@ -1,4 +1,4 @@
-package alquilerbarcos.alquiler;
+package alquilerbarcos;
 
 import java.util.Scanner;
 

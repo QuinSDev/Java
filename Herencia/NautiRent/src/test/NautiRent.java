@@ -1,6 +1,6 @@
 package test;
 
-import alquilerbarcos.alquiler.Menu;
+import alquilerbarcos.Menu;
 
 public class NautiRent {
     
