@@ -10,9 +10,9 @@ public final class Yate extends Barco{
     public Yate() {
     }
 
-    public Yate(int potencia, int numCamarotes, String matricula, int metros, 
-            LocalDate anioFabricacion) {
-        super(matricula, metros, anioFabricacion);
+    public Yate(int potencia, int numCamarotes, String nombre, String matricula, 
+            int eslora, LocalDate anioFabricacion) {
+        super(nombre, matricula, eslora, anioFabricacion);
         this.potencia = potencia;
         this.numCamarotes = numCamarotes;
     }

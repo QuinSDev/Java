@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
+    Rent rent = new Rent();
     Scanner read = new Scanner(System.in);
     int ancho = 32, opcion = 0;
 
@@ -52,9 +53,11 @@ public class Menu {
         
         switch(opcion) {
             
-            case 1: 
+            case 1:
+                rent.customerRegister();
                 break;
             case 2:
+                rent.imprimirBarco();
                 break;
             case 3: 
                 break;

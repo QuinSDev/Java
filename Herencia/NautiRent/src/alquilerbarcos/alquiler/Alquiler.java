@@ -4,44 +4,30 @@ import alquilerbarcos.model.Barco;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Alquiler {
     
-    private String nombre;
-    private long documento;
+    
     private LocalDate fechaAlquiler, fechaDevolucion;
-    private String posicionAmarre;
+    private HashMap<String, Barco> posicionAmarre;
     private ArrayList<Barco> barcos;
     private Barco barco;
 
     public Alquiler() {
         barcos = new ArrayList<>();
+        posicionAmarre = new HashMap<>();
+        barcos();
     }
 
-    public Alquiler(String nombre, long documento, LocalDate fechaAlquiler, 
-            LocalDate fechaDevolucion, String posicionAmarre, Barco barco) {
-        this.nombre = nombre;
-        this.documento = documento;
+    public Alquiler(LocalDate fechaAlquiler, 
+            LocalDate fechaDevolucion, HashMap<String, Barco> posicionAmarre, 
+            Barco barco) {
+      
         this.fechaAlquiler = fechaAlquiler;
         this.fechaDevolucion = fechaDevolucion;
         this.posicionAmarre = posicionAmarre;
         this.barco = barco;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public long getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(long documento) {
-        this.documento = documento;
     }
 
     public LocalDate getFechaAlquiler() {
@@ -60,11 +46,11 @@ public class Alquiler {
         this.fechaDevolucion = fechaDevolucion;
     }
 
-    public String getPosicionAmarre() {
+    public HashMap<String, Barco> getPosicionAmarre() {
         return posicionAmarre;
     }
 
-    public void setPosicionAmarre(String posicionAmarre) {
+    public void setPosicionAmarre(HashMap<String, Barco> posicionAmarre) {
         this.posicionAmarre = posicionAmarre;
     }
 
@@ -78,16 +64,30 @@ public class Alquiler {
     
     public void barcos() {
         
-        barcos.add(new Barco("Marina Azul", 25, LocalDate.parse("2010-05-23")));
-        barcos.add(new Barco("Viento Sereno", 30, LocalDate.parse("2015-01-18")));
+        barcos.add(new Barco("Marina Azul", "ABC123", 25, 
+                LocalDate.parse("2010-05-23")));
+        barcos.add(new Barco("Viento Sereno", "XYZ789", 30, 
+                LocalDate.parse("2015-01-18")));
         
     }
     
-    public void alquilar() {
+    public void precioAlquilar() {
         
         Period diasOcupacion = Period.between(fechaDevolucion, fechaDevolucion);
         int alquiler = diasOcupacion.getDays() * barco.calcularMoudlo();
         System.out.println("El precio final es de " + alquiler);
+        
+    }
+    
+    public void mostrar() {
+        for (Barco barco1 : barcos) {
+            System.out.println(barco1.toString());
+        }
+    }
+    
+    public void amarre() {
+        
+        posicionAmarre.put("A1", barcos.get(0));
         
     }
     

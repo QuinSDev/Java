@@ -5,10 +5,14 @@ import java.time.LocalDate;
 public final class Velero extends Barco{
     
     private int numeMastiles;
-
-    public Velero(int numeMastiles, String matricula, int metros, 
+    
+    public Velero() {
+        
+    }
+    
+    public Velero(int numeMastiles, String nombre, String matricula, int eslora, 
             LocalDate anioFabricacion) {
-        super(matricula, metros, anioFabricacion);
+        super(nombre, matricula, eslora, anioFabricacion);
         this.numeMastiles = numeMastiles;
     }
 

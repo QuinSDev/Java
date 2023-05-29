@@ -9,11 +9,12 @@ public final class BarcoMotor extends Barco{
     public BarcoMotor() {
     }
 
-    public BarcoMotor(int potencia, String matricula, int metros, 
+    public BarcoMotor(int potencia, String nombre, String matricula, int eslora, 
             LocalDate anioFabricacion) {
-        super(matricula, metros, anioFabricacion);
+        super(nombre, matricula, eslora, anioFabricacion);
         this.potencia = potencia;
     }
+
 
     public int getPotencia() {
         return potencia;
