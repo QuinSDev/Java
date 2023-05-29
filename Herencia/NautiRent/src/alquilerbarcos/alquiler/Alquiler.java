@@ -64,8 +64,6 @@ public class Alquiler {
     
     public void barcos() {
         
-        
-        
     }
     
     public void precioAlquilar() {

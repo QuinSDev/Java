@@ -12,7 +12,7 @@ public final class Velero extends Barco{
     
     public Velero(String nombre, String matricula, int eslora, 
             LocalDate anioFabricacion, int numeMastiles) {
-        super(nombre, matricula, eslora, anioFabricacion);
+
         this.numeMastiles = numeMastiles;
     }
 

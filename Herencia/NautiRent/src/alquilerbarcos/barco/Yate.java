@@ -12,7 +12,7 @@ public final class Yate extends Barco{
 
     public Yate( String nombre, String matricula, int eslora, 
             LocalDate anioFabricacion, int potencia, int numCamarotes) {
-        super(nombre, matricula, eslora, anioFabricacion);
+
         this.potencia = potencia;
         this.numCamarotes = numCamarotes;
     }

@@ -1,6 +1,10 @@
 package alquilerbarcos;
 
+
 import alquilerbarcos.cliente.*;
+
+import alquilerbarcos.cliente.Cliente;
+
 import java.util.Scanner;
 
 public class Rent {
@@ -17,14 +21,16 @@ public class Rent {
         System.out.print("Documento: ");
         cliente.setDocumento(read.nextLong());
         read.nextLine();
+
         list.setListCustomer(cliente);
+
+
         
         
     }
     
+
     public void barcosDisponibles() {
-        
-       
         
     }
     

@@ -9,6 +9,7 @@ public final class BarcoMotor extends Barco{
     public BarcoMotor() {
     }
 
+
     public BarcoMotor(String nombre, String matricula, int eslora, 
             LocalDate anioFabricacion, int potencia) {
         super(nombre, matricula, eslora, anioFabricacion);
