@@ -4,17 +4,27 @@ import java.time.LocalDate;
 
 public class Barco {
     
-    protected String matricula;
+    protected String nombre, matricula;
     protected int eslora;
     protected LocalDate anioFabricacion;
 
     public Barco() {
     }
 
-    public Barco(String matricula, int eslora, LocalDate anioFabricacion) {
+    public Barco(String nombre, String matricula, int eslora, 
+            LocalDate anioFabricacion) {
+        this.nombre = nombre;
         this.matricula = matricula;
         this.eslora = eslora;
         this.anioFabricacion = anioFabricacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getMatricula() {
