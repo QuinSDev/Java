@@ -1,11 +1,12 @@
 package alquilerbarcos;
 
-import alquilerbarcos.cliente.Cliente;
+import alquilerbarcos.cliente.*;
 import java.util.Scanner;
 
 public class Rent {
     
     Cliente cliente = new Cliente();
+    CustomerList list = new CustomerList();
     Scanner read = new Scanner(System.in);
     
     public void customerRegister() {
@@ -16,12 +17,14 @@ public class Rent {
         System.out.print("Documento: ");
         cliente.setDocumento(read.nextLong());
         read.nextLine();
+        list.setListCustomer(cliente);
         
         
     }
     
-    public void imprimirBarco() {
-    
+    public void barcosDisponibles() {
+        
+       
         
     }
     

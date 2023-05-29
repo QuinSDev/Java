@@ -1,4 +1,4 @@
-package alquilerbarcos.model;
+package alquilerbarcos.barco;
 
 import java.time.LocalDate;
 
@@ -10,8 +10,8 @@ public final class Velero extends Barco{
         
     }
     
-    public Velero(int numeMastiles, String nombre, String matricula, int eslora, 
-            LocalDate anioFabricacion) {
+    public Velero(String nombre, String matricula, int eslora, 
+            LocalDate anioFabricacion, int numeMastiles) {
         super(nombre, matricula, eslora, anioFabricacion);
         this.numeMastiles = numeMastiles;
     }

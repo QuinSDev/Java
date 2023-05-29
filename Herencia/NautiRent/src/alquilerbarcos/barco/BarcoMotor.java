@@ -1,4 +1,4 @@
-package alquilerbarcos.model;
+package alquilerbarcos.barco;
 
 import java.time.LocalDate;
 
@@ -9,8 +9,8 @@ public final class BarcoMotor extends Barco{
     public BarcoMotor() {
     }
 
-    public BarcoMotor(int potencia, String nombre, String matricula, int eslora, 
-            LocalDate anioFabricacion) {
+    public BarcoMotor(String nombre, String matricula, int eslora, 
+            LocalDate anioFabricacion, int potencia) {
         super(nombre, matricula, eslora, anioFabricacion);
         this.potencia = potencia;
     }

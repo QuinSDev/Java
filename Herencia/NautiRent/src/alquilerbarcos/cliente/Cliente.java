@@ -28,7 +28,5 @@ public class Cliente {
     public void setDocumento(long documento) {
         this.documento = documento;
     }
-    
-    
-    
+ 
 }

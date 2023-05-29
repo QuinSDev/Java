@@ -57,7 +57,7 @@ public class Menu {
                 rent.customerRegister();
                 break;
             case 2:
-                rent.imprimirBarco();
+                rent.barcosDisponibles();
                 break;
             case 3: 
                 break;

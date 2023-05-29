@@ -1,4 +1,4 @@
-package alquilerbarcos.model;
+package alquilerbarcos.barco;
 
 import java.time.LocalDate;
 

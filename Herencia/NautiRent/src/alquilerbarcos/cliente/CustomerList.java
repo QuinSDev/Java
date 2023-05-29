@@ -7,6 +7,7 @@ public class CustomerList {
     private ArrayList<Cliente> listCustomer;
 
     public CustomerList() {
+        listCustomer = new ArrayList<>();
     }
 
     public CustomerList(ArrayList<Cliente> listCustomer) {
@@ -30,6 +31,5 @@ public class CustomerList {
         }
         return null;
     }
-    
     
 }
