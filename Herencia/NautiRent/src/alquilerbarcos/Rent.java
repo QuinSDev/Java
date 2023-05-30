@@ -1,6 +1,9 @@
 package alquilerbarcos;
 
 
+import alquilerbarcos.barco.Barco;
+import alquilerbarcos.barco.ListBarco;
+
 import alquilerbarcos.cliente.*;
 
 import alquilerbarcos.cliente.Cliente;
@@ -8,13 +11,15 @@ import alquilerbarcos.cliente.Cliente;
 import java.util.Scanner;
 
 public class Rent {
-    
+
     Cliente cliente = new Cliente();
     CustomerList list = new CustomerList();
+    ListBarco listBarco = new ListBarco();
+    Barco barco = new Barco();
     Scanner read = new Scanner(System.in);
-    
+
     public void customerRegister() {
-        
+
         System.out.println("");
         System.out.print("Nombre: ");
         cliente.setNombre(read.nextLine());
@@ -23,15 +28,21 @@ public class Rent {
         read.nextLine();
 
         list.setListCustomer(cliente);
-
-
-        
+    
         
     }
     
-
     public void barcosDisponibles() {
         
+
+        
+        barco.message();
+        
+        for (Barco barco1 : listBarco.getList()) {
+            System.out.println(barco1);
+        }
+        
+
     }
-    
+
 }
