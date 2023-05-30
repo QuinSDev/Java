@@ -18,8 +18,8 @@ public class ListCliente {
         return listCliente;
     }
 
-    public void setListCliente(ArrayList<Cliente> listCliente) {
-        this.listCliente = listCliente;
+    public void setListCliente(Cliente listCliente) {
+        this.listCliente.add(listCliente);
     }
     
     public Cliente buscarCliente(long document) {
