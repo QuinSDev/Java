@@ -113,7 +113,7 @@ public class Barco {
         sb.append(", anioFabricacion=").append(anioFabricacion);
         sb.append('}');
         
-        System.out.print("\n"+"-".repeat(ancho));
+        
         return sb.toString();
     }
 
