@@ -26,7 +26,7 @@ public class ListBarco {
                 LocalDate.parse("2015-09-18"), 2));
         
         setList(new Yate("Ocean Pearl", "YT001AB", 20, 
-                LocalDate.parse("2010-07-1"), 500, 4));
+                LocalDate.parse("2010-07-01"), 500, 4));
         setList(new Yate("Sunset Dream", "YT002CD", 25, 
                 LocalDate.parse("2020-12-05"), 750, 6));
     }
@@ -38,7 +38,5 @@ public class ListBarco {
     public void setList(Barco list) {
         this.list.add(list);
     }
-    
-    
     
 }
