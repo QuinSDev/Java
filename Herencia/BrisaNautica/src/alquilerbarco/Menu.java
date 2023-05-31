@@ -1,26 +1,37 @@
 package alquilerbarco;
 
+import alquilerbarco.alquiler.Puerto;
 import java.util.Scanner;
 
 public class Menu {
     
+    Puerto puerto = new Puerto();
     Scanner read = new Scanner(System.in);
     int ancho = 35, opcion = 0;
 
     public void menu() {
-
-        String messageWelcome = "Bienvenido a NautiRent",
-                messageOpcion = "MENÚ PRINCIPAL",
-                messageRegister = "1. Registrar cliente",
-                messageRent = "2. Alquilar barco",
-                messageCustomerR = "3. Clientes registrados",
-                messageExit = "4. Salir";
-
+        
+        String messageWelcome = "Bienvenido a NautiRent";
+        
         int padding = (ancho - messageWelcome.length()) / 2;
         System.out.print("*".repeat(ancho) + "\n");
         System.out.format("*%" + (padding - 1) + "s%s%" + padding + "s*", 
                 "", messageWelcome, "");
         System.out.print("\n" + "*".repeat(ancho) + "\n");
+        
+        menuPrincipal();
+                
+    }
+    
+    public void menuPrincipal() {
+
+        String  messageOpcion = "MENÚ PRINCIPAL",
+                messageRegister = "1. Registrar cliente",
+                messageRent = "2. Alquilar barco",
+                messageCustomerR = "3. Clientes registrados",
+                messageExit = "4. Salir";
+
+        
 
         int paddingO = ((ancho - messageOpcion.length()) / 2) ;
         int paddinR = ((ancho - messageCustomerR.length()) / 2);
@@ -99,7 +110,7 @@ public class Menu {
             
             System.out.print("\nElija una opción: ");
             opcion = read.nextInt();
-//            opcion(opcion);
+            opcionAlquiler(opcion);
             read.nextLine();
             
             
@@ -108,7 +119,23 @@ public class Menu {
         
     }
     
-    public void opcionAlquiler() {
+    public void opcionAlquiler(int opcion) {
+        
+        switch(opcion) {
+            case 1:
+                break;
+            case 2:
+                puerto.dibujarPuerto();
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                System.out.println("Opción incorrecta, ¡Vuelva a intentarlo!");
+                break;
+                
+        }
         
     }
     
