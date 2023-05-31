@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class Menu {
     
     Puerto puerto = new Puerto();
+    LogicBrisa logic = new LogicBrisa();
     Scanner read = new Scanner(System.in);
+    
     int ancho = 35, opcion = 0;
 
     public void menu() {
@@ -63,6 +65,7 @@ public class Menu {
         
         switch(opcion) {
             case 1:
+                logic.customerRegister();
                 break;
             case 2:
                 menuAlquiler();
