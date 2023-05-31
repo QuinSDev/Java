@@ -10,7 +10,7 @@ public class Menu {
     public void menu() {
 
         String messageWelcome = "Bienvenido a NautiRent",
-                messageOpcion = "Menú de opciones",
+                messageOpcion = "MENÚ PRINCIPAL",
                 messageRegister = "1. Registrar cliente",
                 messageRent = "2. Alquilar barco",
                 messageCustomerR = "3. Clientes registrados",
@@ -42,18 +42,19 @@ public class Menu {
             System.out.print("\n" + "-".repeat(ancho) + "\n");
             System.out.print("\nElija una opción: ");
             opcion = read.nextInt();
-            opcion(opcion);
+            opcionPrincipal(opcion);
             read.nextLine();
         } while (opcion != 4);
 
     }
     
-    public void opcion(int opcion) {
+    public void opcionPrincipal(int opcion) {
         
         switch(opcion) {
             case 1:
                 break;
             case 2:
+                menuAlquiler();
                 break;
             case 3:
                 
@@ -65,6 +66,49 @@ public class Menu {
                 System.out.println("Opción incorrecta, ¡Vuelva a intentarlo!");
                 break;
         }
+        
+    }
+    
+    public void menuAlquiler() {
+        
+        String messageMenu = "MENÚ ALQUILER",
+                messageBarco = "1. Mostrar barcos disponibles",
+                messageAmarre = "2. Mostrar puerto",
+                messageRealizar = "3. Realizar alquiler",
+                messagerExit = "4. Volver al menú principal";
+        
+        int paddinM = ((ancho - messageMenu.length()) /2)-1 ;
+        int paddingB = (ancho - messageBarco.length()) /2;
+        int paddingA = ((ancho - messageAmarre.length())/2)+4;
+        int paddinR = (ancho - messageRealizar.length())/2;
+        
+        do {
+            System.out.print("\n"+"-".repeat(ancho) + "\n");
+            System.out.format("|%" + paddinM + "s%s%" + paddinM + "s|", "",
+                    messageMenu, "");
+            System.out.print("\n" + "-".repeat(ancho) + "\n");
+            System.out.format("|%" + paddingB + "s%s%" + (paddingB-2) + "s|", "",
+                    messageBarco, "");
+            System.out.format("\n" + "|%" + paddingB + "s%s%" + paddingA + 
+                    "s|", "", messageAmarre, "");
+             System.out.format("\n" + "|%" + paddingB + "s%s%" + (paddinR+3) + 
+                    "s|", "", messageRealizar, "");
+            System.out.format("\n" + "|%" + paddingB + "s%s%" + paddingB + "s|", 
+                    "", messagerExit, "");
+            System.out.print("\n" + "-".repeat(ancho) + "\n");
+            
+            System.out.print("\nElija una opción: ");
+            opcion = read.nextInt();
+//            opcion(opcion);
+            read.nextLine();
+            
+            
+        } while (opcion != 4);
+        
+        
+    }
+    
+    public void opcionAlquiler() {
         
     }
     
