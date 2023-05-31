@@ -19,7 +19,16 @@ public class LogicBrisa {
         cliente.setDocumento(read.nextLong());
         read.nextLine();
         
-        listCliente.setListCliente(cliente);
+        listCliente.setListCliente(new Cliente(cliente.getNombre(), 
+                cliente.getDocumento()));
+        
+    }
+    
+    public void showCustomer() {
+        
+        for (Cliente cliente1 : listCliente.getListCliente()) {
+            System.out.println(cliente1);
+        }
         
     }
     

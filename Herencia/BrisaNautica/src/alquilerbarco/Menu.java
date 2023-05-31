@@ -74,7 +74,7 @@ public class Menu {
                 menuAlquiler();
                 break;
             case 3:
-                
+                logic.showCustomer();
                 break;
             case 4:
                 System.out.println("\n¡Gracias por utilizar nuestro sistema!");
