@@ -1,13 +1,16 @@
 package alquilerbarco;
 
 import alquilerbarco.alquiler.Puerto;
+import alquilerbarco.barco.ListBarco;
 import java.util.Scanner;
 
 public class Menu {
     
     Puerto puerto = new Puerto();
     LogicBrisa logic = new LogicBrisa();
+    ListBarco listBarco = new ListBarco();
     Scanner read = new Scanner(System.in);
+    
     
     int ancho = 35, opcion = 0;
 
@@ -126,6 +129,7 @@ public class Menu {
         
         switch(opcion) {
             case 1:
+                listBarco.barcoMessage();
                 break;
             case 2:
                 puerto.dibujarPuerto();
