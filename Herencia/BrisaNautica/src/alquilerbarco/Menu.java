@@ -1,14 +1,21 @@
 package alquilerbarco;
 
 import alquilerbarco.alquiler.Puerto;
+
 import alquilerbarco.barco.ListBarco;
+
+import alquilerbarco.cliente.ListCliente;
+
 import java.util.Scanner;
 
 public class Menu {
     
     Puerto puerto = new Puerto();
-    LogicBrisa logic = new LogicBrisa();
+
     ListBarco listBarco = new ListBarco();
+
+    ListCliente listC = new ListCliente();
+
     Scanner read = new Scanner(System.in);
     
     
@@ -68,13 +75,14 @@ public class Menu {
         
         switch(opcion) {
             case 1:
-                logic.customerRegister();
+
+                listC.registerCustomer();
+
                 break;
             case 2:
                 menuAlquiler();
                 break;
             case 3:
-                logic.showCustomer();
                 break;
             case 4:
                 System.out.println("\n¡Gracias por utilizar nuestro sistema!");
