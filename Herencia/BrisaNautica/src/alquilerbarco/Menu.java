@@ -70,7 +70,7 @@ public class Menu {
                 listC.registerCustomer();
                 break;
             case 2:
-                menuAlquiler();
+                listC.enterCustomer(this);
                 break;
             case 3:
                 listC.showCustomer();
