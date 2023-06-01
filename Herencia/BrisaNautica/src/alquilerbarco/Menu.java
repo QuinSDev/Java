@@ -83,6 +83,7 @@ public class Menu {
                 menuAlquiler();
                 break;
             case 3:
+                listC.showCustomer();
                 break;
             case 4:
                 System.out.println("\n¡Gracias por utilizar nuestro sistema!");

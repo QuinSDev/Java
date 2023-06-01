@@ -40,13 +40,21 @@ public class ListCliente {
         
         Scanner read = new Scanner(System.in);
         
-        System.out.print("Ingrese el nombre: ");
+        System.out.print("\nIngrese el nombre: ");
         cliente.setNombre(read.nextLine());
         System.out.print("Ingrese el documento: ");
         cliente.setDocumento(read.nextLong());
         
         listCliente.add(new Cliente(cliente.getNombre(), 
                 cliente.getDocumento()));
+        
+    }
+    
+    public void showCustomer() {
+        
+        for (Cliente cliente1 : listCliente) {
+            System.out.println(cliente1);
+        }
         
     }
     
