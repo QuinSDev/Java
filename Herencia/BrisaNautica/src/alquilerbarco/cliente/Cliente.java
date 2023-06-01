@@ -28,5 +28,15 @@ public class Cliente {
     public void setDocumento(long documento) {
         this.documento = documento;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nNombre: ").append(nombre);
+        sb.append("\nDocumento: ").append(documento);
+        return sb.toString();
+    }
+    
+    
     
 }
