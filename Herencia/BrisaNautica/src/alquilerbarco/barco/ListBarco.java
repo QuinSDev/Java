@@ -10,7 +10,7 @@ public class ListBarco {
 
         listBarco = new ArrayList<>();
 
-        listBarco.add(new Barco("Marina Azul", "ABC123", 25, 210));
+        listBarco.add(new Barco("Marina Azul", "ABC123", 25, 2010));
         listBarco.add(new Barco("Viento Sereno", "XYZ789", 30, 2015));
 
         listBarco.add(new BarcoMotor("Marlin Rojo", "AB123CD", 10, 2018, 250));
@@ -32,11 +32,11 @@ public class ListBarco {
         this.listBarco.add(listBarco);
     }
 
-    int ancho = 124;
-    int[] longi = {10, 15, 12, 8, 20, 14, 10, 12};
+    int ancho = 127;
+    int[] longi = {13, 15, 12, 8, 20, 14, 10, 12};
 
     String[] message = {"| Tipo", "Nombre", "Matrícula", "Eslora",
-        "Año Frabricación", "Potencia CV", "# Mastil", "# Camarotes"};
+        "Año Frabricación", "Potencia CV", "N° Mastil", "N° Camarotes"};
 
     String messageB = "Barcos disponibles";
 
@@ -57,7 +57,7 @@ public class ListBarco {
         }
 
         System.out.println("");
-        dibujarLinea();
+        barco();
 
     }
 
@@ -82,6 +82,12 @@ public class ListBarco {
     }
     
     public void barco() {
+        
+        for (Barco barco : listBarco) {
+            dibujarLinea();
+            System.out.println(barco);
+        }
+        System.out.println("-".repeat(ancho));
         
     }
 
