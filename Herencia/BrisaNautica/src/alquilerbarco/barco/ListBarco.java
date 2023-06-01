@@ -32,17 +32,19 @@ public class ListBarco {
         this.listBarco.add(listBarco);
     }
 
-    int ancho = 132;
-    int[] longi = {14, 15, 12, 10, 20, 14, 10, 12};
+    int ancho = 124;
+    int[] longi = {10, 15, 12, 8, 20, 14, 10, 12};
 
-    String[] message = {"| Tipo de barco", "Nombre", "Matrícula", "Eslora",
-        "Año Frabricación", "Potencia CV", "N° Mastiles", "N° Camarotes"};
+    String[] message = {"| Tipo", "Nombre", "Matrícula", "Eslora",
+        "Año Frabricación", "Potencia CV", "# Mastil", "# Camarotes"};
 
     String messageB = "Barcos disponibles";
 
     int paddinB = (ancho - messageB.length()) / 2;
 
-    public void barcoMessage() {
+    public void showBarcos() {
+
+        int paddinB = (ancho - messageB.length()) / 2;
 
         System.out.format("\n%" + paddinB + "s%s%" + paddinB + "s", "",
                 messageB, "");
@@ -80,11 +82,9 @@ public class ListBarco {
         }
 
     }
-    
-    public void dibujarUltimalinea() {
-        
-        
-        
+
+    public void barco() {
+
     }
 
 }

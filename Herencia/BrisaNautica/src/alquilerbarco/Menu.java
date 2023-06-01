@@ -1,20 +1,16 @@
 package alquilerbarco;
 
 import alquilerbarco.alquiler.Puerto;
-
 import alquilerbarco.barco.ListBarco;
-
 import alquilerbarco.cliente.ListCliente;
-
 import java.util.Scanner;
 
 public class Menu {
     
     Puerto puerto = new Puerto();
-
     ListBarco listBarco = new ListBarco();
-
     ListCliente listC = new ListCliente();
+    ListBarco listB = new ListBarco();
 
     Scanner read = new Scanner(System.in);
     
@@ -138,7 +134,7 @@ public class Menu {
         
         switch(opcion) {
             case 1:
-                listBarco.barcoMessage();
+                listB.showBarcos();
                 break;
             case 2:
                 puerto.dibujarPuerto();
