@@ -1,5 +1,6 @@
 package alquilerbarco.cliente;
 
+import alquilerbarco.Menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ public class ListCliente {
     
     private ArrayList<Cliente> listCliente;
     private Cliente cliente;
+    Scanner read = new Scanner(System.in);
 
     public ListCliente() {
         listCliente = new ArrayList<>();
@@ -38,7 +40,7 @@ public class ListCliente {
     
     public void registerCustomer() {
         
-        Scanner read = new Scanner(System.in);
+        
         
         System.out.print("\nIngrese el nombre: ");
         cliente.setNombre(read.nextLine());
@@ -55,6 +57,33 @@ public class ListCliente {
         for (Cliente cliente1 : listCliente) {
             System.out.println(cliente1);
         }
+        
+    }
+    
+    public void enterCustomer(Menu menu) {
+        
+        if (listCliente.isEmpty()) {
+            System.out.println("\n¡No hay ningún cliente registrado!");
+        } else {
+            
+            System.out.print("\nIngrese el documento: ");
+            int docu = read.nextInt();
+            
+            boolean encontrado = false;
+            
+            for (Cliente cliente1 : listCliente) {
+                if (cliente1.getDocumento() == docu) {
+                    encontrado = true;
+                    menu.menuAlquiler();
+                    break;
+                }
+            }
+            
+            if (!encontrado) {
+                System.out.println("\n¡Documento invalido!");
+            }
+        }
+        
         
     }
     
