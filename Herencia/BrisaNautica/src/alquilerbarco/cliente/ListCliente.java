@@ -1,13 +1,16 @@
 package alquilerbarco.cliente;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListCliente {
     
     private ArrayList<Cliente> listCliente;
+    private Cliente cliente;
 
     public ListCliente() {
         listCliente = new ArrayList<>();
+        cliente  = new Cliente();
     }
 
     public ListCliente(ArrayList<Cliente> listCliente) {
@@ -30,6 +33,20 @@ public class ListCliente {
             }
         }
         return null;
+        
+    }
+    
+    public void registerCustomer() {
+        
+        Scanner read = new Scanner(System.in);
+        
+        System.out.print("Ingrese el nombre: ");
+        cliente.setNombre(read.nextLine());
+        System.out.print("Ingrese el documento: ");
+        cliente.setDocumento(read.nextLong());
+        
+        listCliente.add(new Cliente(cliente.getNombre(), 
+                cliente.getDocumento()));
         
     }
     
