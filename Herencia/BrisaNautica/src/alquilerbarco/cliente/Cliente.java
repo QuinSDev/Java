@@ -1,11 +1,16 @@
 package alquilerbarco.cliente;
 
+import alquilerbarco.barco.Barco;
+import java.util.ArrayList;
+
 public class Cliente {
     
     private String nombre;
     private long documento;
+    private ArrayList<Barco> listB = new ArrayList<>();;
 
     public Cliente() {
+        
     }
 
     public Cliente(String nombre, long documento) {
@@ -27,6 +32,14 @@ public class Cliente {
 
     public void setDocumento(long documento) {
         this.documento = documento;
+    }
+
+    public ArrayList<Barco> getListB() {
+        return listB;
+    }
+
+    public void setListB(Barco listB) {
+        this.listB.add(listB);
     }
 
     @Override

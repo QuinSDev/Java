@@ -46,7 +46,7 @@ public class ListCliente {
         cliente.setNombre(read.nextLine());
         System.out.print("Ingrese el documento: ");
         cliente.setDocumento(read.nextLong());
-        
+        read.nextLine();
         listCliente.add(new Cliente(cliente.getNombre(), 
                 cliente.getDocumento()));
         
@@ -74,7 +74,9 @@ public class ListCliente {
             for (Cliente cliente1 : listCliente) {
                 if (cliente1.getDocumento() == docu) {
                     encontrado = true;
-                    menu.menuAlquiler();
+                    Menu menuC = new Menu();
+                    menuC.setClienSeleccionado(cliente1);
+                    menuC.menuAlquiler();
                     break;
                 }
             }

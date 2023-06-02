@@ -1,7 +1,8 @@
 package alquilerbarco;
 
-import alquilerbarco.alquiler.Puerto;
+import alquilerbarco.alquiler.*;
 import alquilerbarco.barco.ListBarco;
+import alquilerbarco.cliente.Cliente;
 import alquilerbarco.cliente.ListCliente;
 import java.util.Scanner;
 
@@ -11,6 +12,8 @@ public class Menu {
     ListBarco listBarco = new ListBarco();
     ListCliente listC = new ListCliente();
     ListBarco listB = new ListBarco();
+    Alquiler alquiler = new Alquiler();
+    Cliente clienSeleccionado = new Cliente();
 
     Scanner read = new Scanner(System.in);
     
@@ -140,8 +143,10 @@ public class Menu {
                 puerto.dibujarPuerto();
                 break;
             case 3:
+                alquiler.buscarBarco(this);
                 break;
             case 4:
+                menuPrincipal();
                 break;
             default:
                 System.out.println("Opción incorrecta, ¡Vuelva a intentarlo!");
@@ -149,6 +154,14 @@ public class Menu {
                 
         }
         
+    }
+
+    public Cliente getClienSeleccionado() {
+        return clienSeleccionado;
+    }
+
+    public void setClienSeleccionado(Cliente clienSeleccionado) {
+        this.clienSeleccionado = clienSeleccionado;
     }
     
 }

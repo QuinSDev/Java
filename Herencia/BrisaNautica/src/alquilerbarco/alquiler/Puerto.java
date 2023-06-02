@@ -15,7 +15,7 @@ public class Puerto {
     private HashMap<String, String> listaPuertos = new HashMap<>();
 
     public Puerto() {
-        listaPuertos.put("A1", OCUPADO);
+        listaPuertos.put("A1", DISPONIBLE);
         listaPuertos.put("A2", DISPONIBLE);
         listaPuertos.put("A3", DISPONIBLE);
         listaPuertos.put("A4", DISPONIBLE);
@@ -35,11 +35,13 @@ public class Puerto {
         for (Map.Entry<String, String> entry : listaPuertos.entrySet()) {
             key = entry.getKey();
             value = entry.getValue();
-            if (key.contains(posicion)) {
+            if (key.equalsIgnoreCase(posicion)) {
                 Esta = true;
                 if (value.contains(DISPONIBLE)) {
                     deso = true;
+                    
                     break;
+                    
                 }
             }
         }
@@ -47,6 +49,7 @@ public class Puerto {
         if (Esta) {
             if (deso) {
                 listaPuertos.put(key, OCUPADO);
+                System.out.println("Posición asignada");
             } else {
                 System.out.println("Posicion Ocupado");
             }
